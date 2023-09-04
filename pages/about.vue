@@ -84,17 +84,18 @@
                 :opacity="{ duration: 800, delay: 800 }"
                 trigger="visibleOnce"
               >
-                <UiButton
-                  :text="{ string: 'Neem contact', color: 'white' }"
-                  link="/"
-                  type="pill-but btn-primary hover:btn-accent padded z-5 max-w-full max-md:w-full pop-bottom"
-                  :appendIcon="{
-                    icon: {
-                      name: 'fluent:calendar-arrow-counterclockwise-16-filled',
-                      color: 'white',
-                    },
-                  }"
-                />
+                <nuxt-link to="/contact">
+                  <button
+                    class="btn pill-but btn-primary hover:btn-accent padded z-5 text-white"
+                  >
+                    <div class="but-text">
+                      <p class="header">Neem contact</p>
+                    </div>
+                    <Icon
+                      name="fluent:calendar-arrow-counterclockwise-16-filled"
+                    />
+                  </button>
+                </nuxt-link>
               </TransitionBase>
             </div>
           </div>

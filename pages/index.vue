@@ -49,21 +49,20 @@
               :opacity="{ delay: 1000, duration: 1000 }"
               trigger="enter"
             >
-              <UiButton
-                :text="{ string: 'Onze services', color: 'white' }"
-                link="/"
-                type="pill-but btn-primary hover:btn-accent padded z-5
-              max-w-full"
-                :appendIcon="{
-                  icon: { name: 'teenyicons:paw-solid', color: 'white' },
-                }"
+              <button
+                class="btn pill-but btn-primary hover:btn-accent padded z-5 text-white"
                 @click="
                   this.$refs.services.scrollIntoView({
                     block: 'start',
                     behavior: 'smooth',
                   })
                 "
-              />
+              >
+                <div class="but-text">
+                  <p class="header">Onze services</p>
+                </div>
+                <Icon name="teenyicons:paw-solid" />
+              </button>
             </TransitionBase>
           </div>
         </div>
@@ -230,183 +229,10 @@
         </div>
       </div>
     </section>
-    <section
-      ref="services"
-      class="element-section pb-[30px] pt-[60px] max-md:pt-[30px] service-section"
-    >
-      <div class="element-container">
-        <TransitionBase
-          :y="{ value: 300, duration: 200, delay: 200 }"
-          :x="{ value: -500, delay: 1000, duration: 1200 }"
-          :opacity="{ delay: 1000, duration: 500 }"
-          trigger="visibleOnce"
-          class="aspect-square w-[200px] md:w-[250px] absolute right-0 rounded-full top-10 bg-primary/60 -rotate-180 z-0"
-        ></TransitionBase>
-        <!--col divs-->
-
-        <div class="w-full flex flex-wrap z-10">
-          <div
-            class="section-header-container w-full text-center mb-5 md:mb-10"
-          >
-            <TransitionBase
-              :y="{ value: 300, duration: 900 }"
-              :opacity="{ duration: 200 }"
-              trigger="visibleOnce"
-            >
-              <p class="styled-header leading-fwide text-[22px] mb-4">
-                Our Services
-              </p>
-            </TransitionBase>
-            <TransitionBase
-              :y="{ value: 300, duration: 900 }"
-              :opacity="{ duration: 200 }"
-              trigger="visibleOnce"
-            >
-              <h2 class="section-header">What we offer</h2>
-            </TransitionBase>
-          </div>
-          <div class="w-full flex flex-wrap">
-            <TransitionBase
-              :y="{ value: 300, duration: 900 }"
-              :opacity="{ duration: 200 }"
-              trigger="visibleOnce"
-              class="w-full lg:w-1/3"
-            >
-              <TemplatesServiceCard
-                icon="cil:dog"
-                header="Hond Uitlaten"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
-                :price="10"
-                period="wandeling"
-              />
-            </TransitionBase>
-            <TransitionBase
-              :y="{ value: 300, duration: 900 }"
-              :opacity="{ duration: 200 }"
-              trigger="visibleOnce"
-              class="w-full lg:w-1/3"
-            >
-              <TemplatesServiceCard
-                icon="cil:house"
-                header="Opvang"
-                extra="Bij u of mij thuis."
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
-                :price="15"
-                period="dag en/of dagdeel"
-              />
-            </TransitionBase>
-            <TransitionBase
-              :y="{ value: 300, duration: 900 }"
-              :opacity="{ duration: 200 }"
-              trigger="visibleOnce"
-              class="w-full lg:w-1/3"
-            >
-              <TemplatesServiceCard
-                icon="cil:cat"
-                header="Opvang"
-                extra="Katten, konijnen of vogels"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
-                price="7,50"
-                period="dag en/of dagdeel"
-              />
-            </TransitionBase>
-          </div>
-          <div class="mx-auto mt-7">
-            <TransitionBase
-              :opacity="{ duration: 700, delay: 1000 }"
-              trigger="visibleOnce"
-            >
-              <UiButton
-                :text="{ string: 'Neem contact', color: 'white' }"
-                link="/"
-                type="pill-but btn-primary hover:btn-accent padded z-5 max-w-full"
-                :appendIcon="{
-                  icon: {
-                    name: 'fluent:calendar-arrow-counterclockwise-16-filled',
-                    color: 'white',
-                  },
-                }"
-              />
-            </TransitionBase>
-          </div>
-        </div>
-      </div>
+    <section ref="services">
+      <SectionsHomeServiceCards></SectionsHomeServiceCards>
     </section>
-    <section class="element-section py-[30px]">
-      <div class="element-container relative">
-        <div
-          class="bg-accent2/30 absolute left-3 -top-5 aspect-square h-[100px] rounded-full z-0"
-        ></div>
-        <TransitionBase
-          :y="{ value: 300, duration: 350, delay: 500 }"
-          :opacity="{ duration: 350, delay: 500 }"
-          trigger="visibleOnce"
-          class="bg-accent3 absolute left-0 top-16 aspect-square h-[15px] rounded-full z-0"
-        ></TransitionBase>
-        <TransitionBase
-          :scale="{ value: 0.6, duration: 800, delay: 500 }"
-          :opacity="{ duration: 800, delay: 500 }"
-          trigger="visibleOnce"
-          class="aspect-square w-[200px] md:w-[250px] absolute rotate-180 right-0 md:right-24 -top-20 bg-accent/40"
-          style="
-            -webkit-mask-image: url('./assets/images/blob.png');
-            mask-image: url('./assets/images/blob.png');
-            -webkit-mask-size: contain;
-            mask-size: contain;
-            -webkit-mask-position: center center;
-            mask-position: center center;
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-          "
-        ></TransitionBase>
-        <div class="w-full flex flex-wrap z-10">
-          <TransitionBase
-            :y="{ value: 300, duration: 370, delay: 200 }"
-            :opacity="{ duration: 370, delay: 200 }"
-            trigger="visibleOnce"
-            class="w-full md:max-lg:w-1/2 lg:w-1/4"
-          >
-            <templatesStatCard
-              amount="10"
-              description="Totaal tevreden klanten"
-            />
-          </TransitionBase>
-          <TransitionBase
-            :y="{ value: 300, duration: 470, delay: 320 }"
-            :opacity="{ duration: 470, delay: 320 }"
-            trigger="visibleOnce"
-            class="w-full md:max-lg:w-1/2 lg:w-1/4"
-          >
-            <templatesStatCard
-              amount="10"
-              description="Totaal tevreden klanten"
-            />
-          </TransitionBase>
-          <TransitionBase
-            :y="{ value: 300, duration: 540, delay: 400 }"
-            :opacity="{ duration: 540, delay: 400 }"
-            trigger="visibleOnce"
-            class="w-full md:max-lg:w-1/2 lg:w-1/4"
-          >
-            <templatesStatCard
-              amount="10"
-              description="Totaal tevreden klanten"
-            />
-          </TransitionBase>
-          <TransitionBase
-            :y="{ value: 300, duration: 580, delay: 500 }"
-            :opacity="{ duration: 580, delay: 500 }"
-            trigger="visibleOnce"
-            class="w-full md:max-lg:w-1/2 lg:w-1/4"
-          >
-            <templatesStatCard
-              amount="10"
-              description="Totaal tevreden klanten"
-            />
-          </TransitionBase>
-        </div>
-      </div>
-    </section>
+    <SectionsHomeStatCards></SectionsHomeStatCards>
   </main>
 </template>
 

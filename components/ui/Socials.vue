@@ -1,24 +1,29 @@
 <template>
   <div class="flex flex-row gap-6 max-md:mx-auto">
-    <UiButton
-      :type="squared ? 'social-square' : 'social-round'"
-      :appendIcon="{
-        icon: { name: 'ri:whatsapp-fill', color: 'white' },
-      }"
-      onclick='window.open("callto:+1234567890");'
-    />
-    <UiButton
-      :type="squared ? 'social-square' : 'social-round'"
-      :appendIcon="{
-        icon: { name: 'simple-icons:facebook', color: 'white' },
-      }"
-    />
-    <UiButton
-      :type="squared ? 'social-square' : 'social-round'"
-      :appendIcon="{
-        icon: { name: 'mdi:email-edit', color: 'white' },
-      }"
-    />
+    <button
+      :class="
+        (squared ? '' : 'pill-but') +
+        ' btn btn-primary hover:btn-accent z-5 text-white'
+      "
+    >
+      <Icon name="ri:whatsapp-fill" />
+    </button>
+    <button
+      :class="
+        (squared ? '' : 'pill-but') +
+        ' btn btn-primary hover:btn-accent z-5 text-white'
+      "
+    >
+      <Icon name="simple-icons:facebook" />
+    </button>
+    <button
+      :class="
+        (squared ? '' : 'pill-but') +
+        ' btn btn-primary hover:btn-accent z-5 text-white'
+      "
+    >
+      <Icon name="mdi:email-edit" />
+    </button>
   </div>
 </template>
 

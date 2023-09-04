@@ -147,6 +147,10 @@
     @apply scale-110 translate-y-1;
   }
 
+  .drawer-side > ul > li > .router-link-active {
+    @apply btn btn-outline h-auto;
+  }
+
   .social-round {
     @apply btn-round btn-primary hover:btn-accent z-10 max-w-full;
   }

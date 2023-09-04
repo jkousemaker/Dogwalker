@@ -1,12 +1,13 @@
-Add burger button
+Add decorations & Gallery
+Add animations Contact & Gallery
 
-Contact Page {
-Finish Inputs
-Hide popover when input has value
-js email sender
-}
+Revamp animations
+
+JS email sender > loading btn with v-if loading with daisy ui
+JS socials click functions
+
+Fix header error console
 
 Optimize images with lazy loading & compression
 Add skeleton loader for all images
-Add images
 Replace placeholders with real images

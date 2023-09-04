@@ -27,17 +27,18 @@
                     </div>
                   </div>
                   <div class="w-full flex max-lg:justify-center">
-                    <UiButton
-                      :text="{ string: 'Maak afspraak', color: 'white' }"
-                      link="/"
-                      type="pill-but btn-primary padded z-5 max-w-full"
-                      :appendIcon="{
-                        icon: {
-                          name: 'fluent:calendar-arrow-counterclockwise-16-filled',
-                          color: 'white',
-                        },
-                      }"
-                    />
+                    <nuxt-link to="/contact">
+                      <button
+                        class="btn pill-but btn-primary padded z-5 text-white"
+                      >
+                        <div class="but-text">
+                          <p class="header">Maak afspraak</p>
+                        </div>
+                        <Icon
+                          name="fluent:calendar-arrow-counterclockwise-16-filled"
+                        />
+                      </button>
+                    </nuxt-link>
                   </div>
                 </div>
               </div>
