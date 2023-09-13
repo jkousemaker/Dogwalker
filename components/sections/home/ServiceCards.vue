@@ -14,25 +14,25 @@
 
       <div class="w-full flex flex-wrap z-10">
         <div class="section-header-container w-full text-center mb-5 md:mb-10">
-          <TransitionBase
-            :y="{ value: 300, duration: 900 }"
+          <TransitionVertical
+            :y="{ value: 300 }"
             :opacity="{ duration: 200 }"
             trigger="visibleOnce"
           >
             <p class="styled-header leading-fwide text-[22px] mb-4">
               Our Services
             </p>
-          </TransitionBase>
-          <TransitionBase
-            :y="{ value: 300, duration: 900 }"
+          </TransitionVertical>
+          <TransitionVertical
+            :y="{ value: 300 }"
             :opacity="{ duration: 200 }"
             trigger="visibleOnce"
           >
             <h2 class="section-header">What we offer</h2>
-          </TransitionBase>
+          </TransitionVertical>
         </div>
         <div class="w-full flex flex-wrap">
-          <TransitionBase
+          <TransitionVertical
             v-for="serviceCard in serviceCards"
             :y="{
               value: 300,
@@ -50,7 +50,7 @@
               :price="serviceCard.price"
               :period="serviceCard.period"
             />
-          </TransitionBase>
+          </TransitionVertical>
         </div>
         <div class="mx-auto mt-7">
           <TransitionBase

@@ -6,9 +6,11 @@
           class="hero-header-container text-center max-lg:mb-10 lg:text-start relative"
         >
           <p class="styled-header leading-fwide">Onze Lieverds</p>
-          <h2 class="section-header lg:text-start lg:max-w-[50%]">
-            Dit zijn foto's van de honden die ik uitlaat
-          </h2>
+          <TransitionVertical :y="{ value: 600 }">
+            <h2 class="section-header lg:text-start lg:max-w-[50%]">
+              Dit zijn foto's van de honden die ik uitlaat
+            </h2>
+          </TransitionVertical>
           <TransitionBase
             :y="{ value: 300, duration: 350, delay: 500 }"
             :opacity="{ duration: 350, delay: 500 }"

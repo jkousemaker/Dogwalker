@@ -1,0 +1,23 @@
+JS email sender > loading btn with v-if loading with daisy ui
+JS socials click functions
+
+Replace placeholders with real images
+Optimize images with lazy loading & compression
+Add skeleton loader for all images
+
+
+Make 404 Page
+
+--Extra Features--
+    Whatsapp Modal:
+        1. Modal that only opens once after set period
+        2. Recreate whatsapp layout
+        3. onclick submit send to whatsapp number with input message
+    Language Switcher:
+        1. Research how to in nuxt
+        2. Make the configs
+        3. Apply to whole sites
+    Reviews:
+        1. Research how to make local file database in nuxt
+        2. Create page to leave review
+        3. Display reviews somewhere

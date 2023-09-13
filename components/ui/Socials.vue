@@ -36,8 +36,5 @@
 <script>
 export default {
   props: ["squared"],
-  mounted() {
-    console.log(this.squared);
-  },
 };
 </script>
