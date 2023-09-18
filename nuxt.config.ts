@@ -28,29 +28,6 @@ export default defineNuxtConfig({
       },
     ],
   ],
-  runtimeConfig: {
-    public: {
-      motion: {
-        directives: {
-          "pop-bottom": {
-            initial: {
-              opacity: 0,
-              y: 300,
-            },
-            visibleOnce: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                delay: 500,
-
-                duration: 350,
-              },
-            },
-          },
-        },
-      },
-    },
-  },
   components: [
     {
       path: "~/components",
@@ -71,23 +48,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  image: {
-    format: ["webp"],
-    dir: "assets/images",
-    presets: {
-      avatar: {
-        modifiers: {
-          format: "jpg",
-          width: 50,
-          height: 50,
-        },
-      },
-    },
-  },
-  tailwindcss: {
-    cssPath: "assets/css/tailwind.css",
-    configPath: "configs/tailwind.config.js",
-  },
+  css: ["~/assets/css/tailwind.css"],
   postcss: {
     plugins: {
       tailwindcss: {},

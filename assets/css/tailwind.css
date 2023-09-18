@@ -4,6 +4,8 @@
 @tailwind variants;
 
 @layer base {
+  :root {
+  }
   * {
     @apply subpixel-antialiased box-border;
   }
@@ -42,6 +44,9 @@
   }
   section {
     @apply scroll-mt-24;
+  }
+  .error-msg {
+    @apply text-error font-bold text-xl mb-2;
   }
 }
 
@@ -119,32 +124,43 @@
   }
 
   .btn-link {
-    @apply !no-underline relative;
+    --nav-animation-duration: 0.3s;
+    --t-radius-keyframe: 0.2;
+    --b-radius-keyframe: 0.7;
+    @apply !no-underline outline-accent2 relative rounded-t-xl rounded-b-none border border-solid border-transparent [transition:transform_.3s_ease,border-top-left-radius_0s_calc(var(--nav-animation-duration)*var(--t-radius-keyframe)),border-top-right-radius_0s_calc(var(--nav-animation-duration)*var(--t-radius-keyframe)),border-bottom-right-radius_0s_calc(var(--nav-animation-duration)*var(--b-radius-keyframe)),border-bottom-left-radius_0s_calc(var(--nav-animation-duration)*var(--b-radius-keyframe))] overflow-hidden !h-full !min-h-0;
   }
 
   .btn-link:after {
-    @apply transition-all content-[''] absolute w-full rounded-b-xl  h-full -z-[1] opacity-0;
-    @apply bg-gradient-to-t from-accent/70 from-10% via-accent/20 via-70%;
+    @apply content-[''] absolute w-full [transition:background-position_var(--nav-animation-duration)_ease-in-out] p-2  h-full -z-[1];
+    background: linear-gradient(
+      to bottom,
+      rgba(190, 220, 245, 1) 5%,
+      rgba(190, 220, 245, 0.4) 20%,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0) 65%,
+      rgba(33, 176, 114, 0.2) 80%,
+      rgba(33, 176, 114, 0.7) 95%
+    );
+    @apply bg-[length:100%_300%] bg-center;
+  }
+
+  .router-link-exact-active.btn-link {
+    --t-radius-keyframe: 0.7;
+    --b-radius-keyframe: 0.2;
+    @apply relative z-10 outline-accent rounded-t-none rounded-b-xl after:!bg-bottom;
+  }
+
+  a:not(.router-link-exact-active):hover.btn-link,
+  a:not(.router-link-exact-active):focus.btn-link {
+    @apply scale-110 translate-y-1 after:bg-top active:scale-90;
   }
 
   .btn-link > .but-text > .header {
     @apply capitalize font-jost text-base text-gray-text;
   }
 
-  .router-link-exact-active > .btn-link {
-    @apply relative z-10;
-  }
-
-  .router-link-exact-active > .btn-link:after {
-    @apply opacity-100;
-  }
-
-  .router-link-exact-active > .btn-link:active {
+  .router-link-exact-active:active > .btn-link {
     @apply scale-75;
-  }
-
-  a:not(.router-link-exact-active) > .btn-link:hover {
-    @apply scale-110 translate-y-1;
   }
 
   .drawer-side > ul > li > .router-link-active {

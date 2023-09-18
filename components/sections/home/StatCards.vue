@@ -4,41 +4,44 @@
       <div
         class="bg-accent2/30 absolute left-3 -top-5 aspect-square h-[100px] rounded-full z-0"
       ></div>
-      <TransitionBase
-        :y="{ value: 300, duration: 350, delay: 500 }"
-        :opacity="{ duration: 350, delay: 500 }"
-        trigger="visibleOnce"
-        class="bg-accent3 absolute left-0 top-16 aspect-square h-[15px] rounded-full z-0"
-      ></TransitionBase>
-      <TransitionBase
-        :scale="{ value: 0.6, duration: 800, delay: 500 }"
-        :opacity="{ duration: 800, delay: 500 }"
-        trigger="visibleOnce"
-        class="aspect-square w-[200px] md:w-[250px] absolute rotate-180 right-0 md:right-24 -top-20 bg-accent/40"
-        style="
-          -webkit-mask-image: url('./assets/images/blob.png');
-          mask-image: url('./assets/images/blob.png');
-          -webkit-mask-size: contain;
-          mask-size: contain;
-          -webkit-mask-position: center center;
-          mask-position: center center;
-          -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-        "
-      ></TransitionBase>
+      <TransitionVertical
+        :y="{ value: 300 }"
+        :opacity="{ duration: 500 }"
+        class="absolute left-0 top-16 z-0"
+      >
+        <div class="bg-accent3 aspect-square h-[15px] rounded-full"></div>
+      </TransitionVertical>
+      <TransitionVertical
+        :scale="{ value: 0.6 }"
+        :opacity="{ duration: 500 }"
+        class="absolute right-0 md:right-24 -top-20"
+      >
+        <div
+          class="aspect-square w-[200px] md:w-[250px] bg-accent/40 rotate-180"
+          style="
+            -webkit-mask-image: url('./assets/images/blob.png');
+            mask-image: url('./assets/images/blob.png');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center center;
+            mask-position: center center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+          "
+        ></div>
+      </TransitionVertical>
       <div class="w-full flex flex-wrap z-10">
-        <TransitionBase
+        <TransitionVertical
           v-for="statCard in statCards"
           :y="{ value: 300, duration: statCard.yDur, delay: statCard.yDelay }"
           :opacity="{ duration: statCard.opaDur, delay: statCard.opaDelay }"
-          trigger="visibleOnce"
           class="w-full md:max-lg:w-1/2 lg:w-1/4"
         >
           <templatesStatCard
             :amount="statCard.number"
             :description="statCard.content"
           />
-        </TransitionBase>
+        </TransitionVertical>
       </div>
     </div>
   </section>

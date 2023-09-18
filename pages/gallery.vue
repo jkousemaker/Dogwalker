@@ -11,12 +11,13 @@
               Dit zijn foto's van de honden die ik uitlaat
             </h2>
           </TransitionVertical>
-          <TransitionBase
-            :y="{ value: 300, duration: 350, delay: 500 }"
-            :opacity="{ duration: 350, delay: 500 }"
-            trigger="visibleOnce"
-            class="bg-accent3 absolute left-1/5 top-4 aspect-square h-[30px] rounded-full z-0"
-          ></TransitionBase>
+          <TransitionVertical
+            :y="{ value: 300 }"
+            :opacity="{ duration: 500 }"
+            class="absolute left-1/5 top-4 z-0"
+          >
+            <div class="bg-accent3 aspect-square h-[30px] rounded-full"></div>
+          </TransitionVertical>
           <div
             class="bg-gradient-to-bl from-accent2/80 from-20% to-transparent to-80% opacity-50 absolute lg:left-1/3 right-[5%] md:right-1/6 top-0 aspect-square h-[200px] rounded-full z-0"
           ></div>
@@ -36,10 +37,7 @@
               />
             </div>
             <div class="grid gap-2 smx:max-md:gap-5 md:max-lg:gap-10">
-              <img
-                src="https://bimberonline.com/petvanta/wp-content/uploads/sites/56/elementor/thumbs/dog-2022-03-06-14-18-59-utc-min-pugqad7ug49lgnhtrfa06erknpys7bhjix3ibqi2jc.jpg"
-                alt=""
-              />
+              <nuxt-img src="/img/bagus.jpg" />
               <img
                 src="https://bimberonline.com/petvanta/wp-content/uploads/sites/56/2022/05/cute-tabby-cat-with-green-eyes-lying-on-bright-yellow-bean-bag-.jpg"
                 alt=""
@@ -66,40 +64,46 @@
               />
             </div>
           </div>
-          <TransitionBase
-            :y="{ value: 100, duration: 1600 }"
-            :scale="{ value: 0.8, duration: 1400 }"
-            :opacity="{ duration: 1200 }"
-            trigger="enter"
-            class="aspect-square w-[400px] absolute bottom-0 rotate-90 right-1/6 bg-accent/40 blur-md z-0"
-            style="
-              -webkit-mask-image: url('./assets/images/flower.png');
-              mask-image: url('./assets/images/flower.png');
-              -webkit-mask-size: contain;
-              mask-size: contain;
-              -webkit-mask-position: center center;
-              mask-position: center center;
-              -webkit-mask-repeat: no-repeat;
-              mask-repeat: no-repeat;
-            "
-          ></TransitionBase>
-          <TransitionBase
-            :y="{ value: 100, duration: 1600 }"
-            :scale="{ value: 0.8, duration: 1400 }"
-            :opacity="{ duration: 1200 }"
-            trigger="enter"
-            class="aspect-square w-[300px] absolute -top-32 rotate-180 right-0 bg-accent/40 blur-md z-0"
-            style="
-              -webkit-mask-image: url('./assets/images/blob.png');
-              mask-image: url('./assets/images/blob.png');
-              -webkit-mask-size: contain;
-              mask-size: contain;
-              -webkit-mask-position: center center;
-              mask-position: center center;
-              -webkit-mask-repeat: no-repeat;
-              mask-repeat: no-repeat;
-            "
-          ></TransitionBase>
+          <TransitionVertical
+            :y="{ value: 100 }"
+            :scale="{ value: 0.8 }"
+            :opacity="{ duration: 500 }"
+            class="absolute bottom-0 rotate-90 right-1/6 z-0"
+          >
+            <div
+              class="aspect-square w-[400px] bg-accent/40 blur-md"
+              style="
+                -webkit-mask-image: url('./assets/images/flower.png');
+                mask-image: url('./assets/images/flower.png');
+                -webkit-mask-size: contain;
+                mask-size: contain;
+                -webkit-mask-position: center center;
+                mask-position: center center;
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+              "
+            ></div>
+          </TransitionVertical>
+          <TransitionVertical
+            :y="{ value: 100 }"
+            :scale="{ value: 0.8 }"
+            :opacity="{ duration: 500 }"
+            class="absolute -top-32 rotate-180 right-0 z-0"
+          >
+            <div
+              class="aspect-square w-[300px] bg-accent/40 blur-md"
+              style="
+                -webkit-mask-image: url('./assets/images/blob.png');
+                mask-image: url('./assets/images/blob.png');
+                -webkit-mask-size: contain;
+                mask-size: contain;
+                -webkit-mask-position: center center;
+                mask-position: center center;
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+              "
+            ></div>
+          </TransitionVertical>
         </div>
       </div>
     </section>

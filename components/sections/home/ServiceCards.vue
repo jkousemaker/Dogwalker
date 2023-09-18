@@ -3,31 +3,26 @@
     class="element-section pb-[30px] pt-[60px] max-md:pt-[30px] service-section"
   >
     <div class="element-container">
-      <TransitionBase
-        :y="{ value: 300, duration: 200, delay: 200 }"
-        :x="{ value: -500, delay: 1000, duration: 1200 }"
-        :opacity="{ delay: 1000, duration: 500 }"
-        trigger="visibleOnce"
-        class="aspect-square w-[200px] md:w-[250px] absolute right-0 rounded-full top-10 bg-primary/60 -rotate-180 z-0"
-      ></TransitionBase>
+      <TransitionVertical
+        :y="{ value: 300 }"
+        :x="{ value: -500 }"
+        :opacity="{ duration: 500 }"
+        class="absolute right-0 top-10 z-0"
+      >
+        <div
+          class="aspect-square w-[200px] md:w-[250px] bg-primary/60 -rotate-180 rounded-full"
+        ></div>
+      </TransitionVertical>
       <!--col divs-->
 
       <div class="w-full flex flex-wrap z-10">
         <div class="section-header-container w-full text-center mb-5 md:mb-10">
-          <TransitionVertical
-            :y="{ value: 300 }"
-            :opacity="{ duration: 200 }"
-            trigger="visibleOnce"
-          >
+          <TransitionVertical :y="{ value: 300 }" :opacity="{ duration: 500 }">
             <p class="styled-header leading-fwide text-[22px] mb-4">
               Our Services
             </p>
           </TransitionVertical>
-          <TransitionVertical
-            :y="{ value: 300 }"
-            :opacity="{ duration: 200 }"
-            trigger="visibleOnce"
-          >
+          <TransitionVertical :y="{ value: 300 }" :opacity="{ duration: 200 }">
             <h2 class="section-header">What we offer</h2>
           </TransitionVertical>
         </div>
@@ -53,21 +48,17 @@
           </TransitionVertical>
         </div>
         <div class="mx-auto mt-7">
-          <TransitionBase
-            :opacity="{ duration: 700, delay: 1000 }"
-            trigger="visibleOnce"
-          >
-            <nuxt-link to="/contact">
-              <button
-                class="btn pill-but btn-primary hover:btn-accent padded z-5 text-white"
-              >
-                <div class="but-text">
-                  <p class="header">Neem contact</p>
-                </div>
-                <Icon name="fluent:calendar-arrow-counterclockwise-16-filled" />
-              </button>
+          <TransitionVertical :opacity="{ duration: 500 }">
+            <nuxt-link
+              to="/contact"
+              class="btn pill-but btn-primary hover:btn-accent padded z-5 text-white"
+            >
+              <div class="but-text">
+                <p class="header">Neem contact</p>
+              </div>
+              <Icon name="fluent:calendar-arrow-counterclockwise-16-filled" />
             </nuxt-link>
-          </TransitionBase>
+          </TransitionVertical>
         </div>
       </div>
     </div>

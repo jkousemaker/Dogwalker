@@ -1,12 +1,16 @@
-JS email sender > loading btn with v-if loading with daisy ui
 JS socials click functions
 
-Replace placeholders with real images
-Optimize images with lazy loading & compression
-Add skeleton loader for all images
-
+revamp animation values
+remove @apply in tailwind css file and use theme
 
 Make 404 Page
+Make contact page prettier
+
+--Production--
+    Change email js to tante email
+    Put all img in public for publishing
+    Replace placeholders with real images
+    Optimize images with lazy loading & compression
 
 --Extra Features--
     Whatsapp Modal:

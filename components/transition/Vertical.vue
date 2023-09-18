@@ -13,7 +13,7 @@ const props = defineProps({
   opacity: { delay: Number, duration: Number },
   scale: { value: Number, delay: Number, duration: Number },
   rotate: { value: Number, delay: Number, duration: Number },
-  animDelay: Number,
+  animDelay: { type: Number, default: 800 },
 });
 console.log(
   props.x,
@@ -23,24 +23,6 @@ console.log(
   props.rotate,
   props.animDelay
 );
-/*const presets = {
-  "roll-top": {
-    y: { value: 100, delay: 0, duration: 800 },
-    opacity: { value: 0, delay: 0, duration: 800 },
-  },
-  "roll-bottom": {
-    y: { value: -100, delay: 0, duration: 800 },
-    opacity: { value: 0, delay: 0, duration: 800 },
-  },
-  "roll-left": {
-    x: { value: 100, delay: 0, duration: 800 },
-    opacity: { value: 0, delay: 0, duration: 800 },
-  },
-  "roll-right": {
-    x: { value: -100, delay: 0, duration: 800 },
-    opacity: { value: 0, delay: 0, duration: 800 },
-  },
-};*/
 
 const targetEl = ref(null);
 const parentEl = ref(null);
@@ -51,7 +33,7 @@ const { motionInstance } = useMotion(parentEl, {
   visibleOnce: {
     scale: 1,
     transition: {
-      delay: props.animDelay ? props.animDelay : 800,
+      delay: props.animDelay ? props.animDelay : props.animDelay,
       onComplete: () => animateChild(),
     },
   },
@@ -75,23 +57,23 @@ const { variant } = useMotion(targetEl, {
     rotate: 0,
     transition: {
       y: {
-        duration: props.y ? props.y.duration : 800,
+        duration: props.y ? props.y.duration : props.animDelay,
         delay: props.y ? props.y.delay : 0,
       },
       x: {
-        duration: props.x ? props.x.duration : 800,
+        duration: props.x ? props.x.duration : props.animDelay,
         delay: props.x ? props.x.delay : 0,
       },
       opacity: {
-        duration: props.opacity ? props.opacity.duration : 800,
+        duration: props.opacity ? props.opacity.duration : props.animDelay,
         delay: props.opacity ? props.opacity.delay : 0,
       },
       scale: {
-        duration: props.scale ? props.scale.duration : 800,
+        duration: props.scale ? props.scale.duration : props.animDelay,
         delay: props.scale ? props.scale.delay : 0,
       },
       rotate: {
-        duration: props.rotate ? props.rotate.duration : 800,
+        duration: props.rotate ? props.rotate.duration : props.animDelay,
         delay: props.rotate ? props.rotate.delay : 0,
       },
     },

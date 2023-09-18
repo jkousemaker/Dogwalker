@@ -59,33 +59,25 @@
       </div>
     </div>
     <nav class="flex flex-row gap-2 md:gap-5 z-50 group max-smx:hidden">
-      <nuxt-link to="/">
-        <button class="btn btn-link padded z-5 text-black">
-          <div class="but-text">
-            <p class="header">Home</p>
-          </div>
-        </button>
+      <nuxt-link to="/" class="btn btn-link padded z-5 text-black">
+        <div class="but-text">
+          <p class="header">Home</p>
+        </div>
       </nuxt-link>
-      <nuxt-link to="/about">
-        <button class="btn btn-link padded z-5 text-black">
-          <div class="but-text">
-            <p class="header">Informatie</p>
-          </div>
-        </button>
+      <nuxt-link to="/about" class="btn btn-link padded z-5 text-black">
+        <div class="but-text">
+          <p class="header">Informatie</p>
+        </div>
       </nuxt-link>
-      <nuxt-link to="/contact">
-        <button class="btn btn-link padded z-5 text-black">
-          <div class="but-text">
-            <p class="header">Contact</p>
-          </div>
-        </button>
+      <nuxt-link to="/contact" class="btn btn-link padded z-5 text-black">
+        <div class="but-text">
+          <p class="header">Contact</p>
+        </div>
       </nuxt-link>
-      <nuxt-link to="/gallery">
-        <button class="btn btn-link padded z-5 text-black">
-          <div class="but-text">
-            <p class="header">Gallerij</p>
-          </div>
-        </button>
+      <nuxt-link to="/gallery" class="btn btn-link padded z-5 text-black">
+        <div class="but-text">
+          <p class="header">Gallerij</p>
+        </div>
       </nuxt-link>
     </nav>
     <div class="md:flex-1"></div>

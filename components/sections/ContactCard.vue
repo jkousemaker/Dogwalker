@@ -27,17 +27,16 @@
                     </div>
                   </div>
                   <div class="w-full flex max-lg:justify-center">
-                    <nuxt-link to="/contact">
-                      <button
-                        class="btn pill-but btn-primary padded z-5 text-white"
-                      >
-                        <div class="but-text">
-                          <p class="header">Maak afspraak</p>
-                        </div>
-                        <Icon
-                          name="fluent:calendar-arrow-counterclockwise-16-filled"
-                        />
-                      </button>
+                    <nuxt-link
+                      to="/contact"
+                      class="btn pill-but btn-primary padded z-5 text-white"
+                    >
+                      <div class="but-text">
+                        <p class="header">Maak afspraak</p>
+                      </div>
+                      <Icon
+                        name="fluent:calendar-arrow-counterclockwise-16-filled"
+                      />
                     </nuxt-link>
                   </div>
                 </div>
